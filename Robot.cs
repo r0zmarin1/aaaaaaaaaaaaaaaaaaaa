@@ -12,6 +12,12 @@ internal class Robot
     }
 
     static object locker = new object();
+
+    internal int[] robotCoordinates { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
+
+
     public static Robot GetInstance()
     {
         lock (locker)

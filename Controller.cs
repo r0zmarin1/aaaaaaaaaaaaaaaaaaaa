@@ -12,12 +12,12 @@ internal class Controller
     // цикл по запросу команды
     internal void StartListner()
     {
-        int[] array = new int[25];
-        for (int i = 0; i < array.Length; i++)
-        {
-            int.TryParse(Console.ReadLine(), out int field);
-            array[i] = field;
-        }
+        string command = "";
+        int i = 0;
+
+        Console.WriteLine("aaaaa");
+        command = Console.ReadLine();
+        int[] array = command.Select(x => int.Parse(x.ToString())).ToArray();
 
         mainCommander.Execute(array);
 
@@ -26,8 +26,9 @@ internal class Controller
         while (true)
         {
             Console.WriteLine("Введите команды");
-            int.TryParse(Console.ReadLine(), out int commands);
-            mainCommander.Execute(int[] { commands});
+            command = Console.ReadLine();
+            int[] g = command.Select(x => int.Parse(x.ToString())).ToArray();
+            mainCommander.Execute(g);
         }
         // первый запрос на 25 символов (рисование поля) передается mainCommander в метод Execute
         // смена интерпретатора у mainCommander на RobotCommander

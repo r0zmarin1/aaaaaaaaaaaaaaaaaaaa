@@ -1,7 +1,7 @@
 ﻿// класс для ввода данных
 using System.Drawing;
 
-internal class DrawRobotCommand : IRobotCommand
+internal class Clean : IRobotCommand
 {
     public void Execute()
     {
@@ -9,7 +9,6 @@ internal class DrawRobotCommand : IRobotCommand
         Graphics graphics;
         Paint paint = Paint.GetInstance();
         Robot robot = Robot.GetInstance();
-        paint.Graphics.FillRectangle(Brushes.Red, robot.X*50, robot.Y*50, 50, 50);
+        paint.Graphics.FillRectangle(Brushes.Blue, robot.X * 50, robot.Y * 50, 50, 50);
     }
 }
-
